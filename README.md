@@ -1,6 +1,6 @@
 # Independent-study-Financial-Risk-Modelling
 
--Notes keeping when reading
+-Notes keeping 
 
 -Relevant R codes
 
