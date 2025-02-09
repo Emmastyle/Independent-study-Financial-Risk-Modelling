@@ -12,11 +12,133 @@ Rmetrics: R language package suite for financial engineering and computational f
 Different distribution models: Density function values, probabilities, quantiles and generating random numbers.
                                Density function (starts with d), distribution function (starts with p), quantile function (starts with q) and random number generation (starts with r)
 Robust Estimator: An estimator that is insensitive to extreme values. e.g.mean, median, IQR, MAD ( MAD = \text{median}(|X_i - \text{median}(X)|) ), Spearman Rank Correlation.
-ghSlider(), hypSlider(), nigSlider().
 NIG: Normal Inverse Gaussian Distribution, a special case of the Generalized Hyperbolic (GH) distributions. Heavy-tailed and skewed distributions,self-decomposable,Modeling of financial time series.
-
 f(x | \alpha, \beta, \delta, \mu) = \frac{\alpha \delta K_1(\alpha \sqrt{\delta^2 + (x - \mu)^2})}{\pi \sqrt{\delta^2 + (x - \mu)^2}} e^{\delta \sqrt{\alpha^2 - \beta^2} + \beta (x - \mu)}
 •	\alpha &gt;  0 steepness of the control distribution
 • \beta control skewness of distribution
 •	\delta &gt;  0 scale of control distribution
 • \mu is a location parameter
+
+fBasics: 
+ghSlider(), hypSlider(), nigSlider() 
+Financial market yield data: foofit(); mode:fooMode(); moments: fooMean(), fooVar(),fooSkew(), fooKurt(); Robust correspondence：fooMED(), fooIQR(),fooSKEW(), fooKURT(); (foo: abbreviation corresponding to gh,ght,hyp,nig, etc.
+Unknown parameters of the estimated distribution：In relation to fitting NIG, ML principle, general method of moments, maximum product distance or variance product spacing, nigShapeTriangle().
+nlminb():Minimize the negative logarithmic likelihood function
+//The fit() methods all return an object of the (formal clas)FDISTFIT class, where the show() function can be displayed.
+
+GeneralizedHyperbolic:
+description: Computing and fitting functions for generalized hypergeometric distributions (GH), hypergeometric distributions (HYP), generalized inverse Gaussian distributions (GIG), and partial Laplacian distributions.
+Core functions
+• Density, distribution function, quantile, random number generation of GH, HYP and GIG distributions
+• Parameter estimation and fitting
+• Statistical moment calculation (mean, variance, skewness, kurtosis)
+• Model evaluation (Q-Q chart, P-P chart)
+• Cramer-von-Mises goodness of fit test
+(1) Basic distribution function
+These functions are used to calculate the density of GH, HYP, GIG distributions, cumulative distribution functions, quantiles, and random numbers:
+• dghyp()/dhypeb()/dgig() - Calculate density function (PDF)
+pghyp()/phyperb()/pgig() - Calculate cumulative distribution function (CDF)
+• qghyp()/qhyperb()/qgig() - Calculates quantiles
+rghyp()/rhyperb()/rgig() - Generates random numbers
+(2) Parameter calculation and conversion
+ghypCalcRange()/hyperbCalcRange() - Calculates the probabilistic mass range of the distribution
+• ghypChangePars()/hyperbChangePars() - Converts GH/HYP parameters
+• ghypCheckPars() - Checks whether the GH parameter is valid
+• hyperbBreaks() - Determines the interval of HYP probabilities and quantiles
+(3) Statistical moment calculation
+• ghyperbMean()/hyperbMean() - mean value
+• ghyperbVar()/hyperbVar() - variance
+ghyperbSkew()/hyperbSkew() - skewness
+• ghyperbKurt()/hyperbKurt() - kurtosis
+• ghypMom() - Calculates the moment of the GH distribution
+(4) Distribution fitting
+• hyperFit() - Fits the HYP distribution
+• ghypFit() - Fits GH distribution
+• gigFit() - Fits the GIG distribution
+• perfFitStart() - Sets the initial parameters of the fit
+• coef()/vcov() - Gets the covariance matrix for the estimated parameters
+(5) Evaluation and visualization
+• qqghyp()/qqhyperb() - Draw Q-Q graph
+ppghyp()/pphyperb() - Draw P-P plots
+• hyperbCvMTest() -Cramer-von-Mises goodness of fit test
+
+QRM:
+description:Mainly used in financial risk management, it provides fitting methods for generalized hypergeometric distribution (GH), normal inverse Gaussian distribution (NIG), Hypergeometric distribution (HYP) and generalized inverse Gaussian distribution (GIG), and supports extreme value theory (EVT) analysis.
+Core functions
+• Fitting GH, NIG, HYP and GIG distributions
+Extreme Value Theory (EVT)
+• Risk measurement calculation (VaR, ES)
+• Moment Estimation
+• Parameter optimization (based on ML estimation)
+(1) Distribution fitting
+• fit.NIH() - Fits the NIG or HYP distribution
+• Mnh() - Used for parameter fitting
+• EGIG() - Calculates the moment of the GIG distribution
+• ElogGIG() - Calculates the logarithmic moment of the GIG distribution
+(2) Generate random numbers
+• Rgig() - Generates a GIG distribution random variable
+(3) Others
+• nlminb() - Minimizes the log-likelihood function
+• summary()/print() - Returns information about the fit object
+
+SkewHyperbolic:
+Used to model and fit skew hyperbolic distributions for skew data.
+ Core functions
+• Density, distribution function, quantile, random number generation
+• Skew hyperbolic distribution parameter estimation
+• Distribution fitting
+• Model evaluation (Q-Q chart, P-P chart)
+(1) Basic distribution function
+• dskewhyp() - Density function (PDF)
+• pskewhyp() - Cumulative Distribution function (CDF)
+• qskewhyp() - quantile
+• rskewhyp() - Generates random numbers
+(2) Parameter calculation and conversion
+• ddskewhyp() - first derivative
+• skewhypBreaks() - Calculates the interval of the distribution
+• skewhypCalcRange() - Calculates a probabilistic mass range
+• skewhypCheckPars() - Checks the validity of the parameter
+(3) Statistical moment calculation
+• skewhypMean() - The mean
+• skewhypVar() - variance
+• skewhypSkew() - skewness
+• skewhypKurt() - kurtosis
+• skewhypMode() - Calculates the mode
+(4) Distribution fitting
+• skewhypFit() - Fits a skew hyperbolic distribution
+• skewhypFitStart() - Sets initial parameters
+optim()/nlm() - minimizes the likelihood function
+print()/plot()/summary() - Fit object analysis
+(5) Evaluation and visualization
+• qqskewhyp() - Draw a Q-Q graph
+• ppskewhyp() - Draw a P-P graph
+
+ VarianceGamma:
+description: SkewHyperbolic is an extension of the Skewhyperbolic package, specifically for variance gamma (VG) distributions, which can be used for options pricing, financial market volatility modeling.
+Core functions
+• VG distribution density, distribution function, quantile, random number generation
+• Parameter estimation
+• VG distribution fitting
+• Statistical moment calculation (mean, variance, skewness, kurtosis)
+• Q-Q chart and P-P chart are used for model evaluation
+Classification of main functions
+(1) Basic distribution function
+• dvg() - Density function (PDF)
+• pvg() - Cumulative Distribution Function (CDF)
+• qvg() - quantile
+• rvg() - Generates random numbers
+(2) Parameter calculation
+• vgMean() - mean value
+• vgVar() - variance
+• vgSkew() - skewness
+• vgKurt() - Kurtosis
+(3) Distribution fitting
+• vgFit() - Fits VG distribution
+• vgFitStart() - Sets initial parameters
+optim()/nlm() - minimizes the likelihood function
+print()/plot()/summary() - Fit object analysis
+(4) Evaluation and visualization
+• qqvg() - Draw Q-Q graph
+• ppvg() - Draw a P-P diagram
+
+
