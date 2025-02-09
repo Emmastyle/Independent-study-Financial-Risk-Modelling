@@ -19,6 +19,8 @@ f(x | \alpha, \beta, \delta, \mu) = \frac{\alpha \delta K_1(\alpha \sqrt{\delta^
 •	\delta &gt;  0 scale of control distribution
 • \mu is a location parameter
 
+
+About GHD
 fBasics: 
 ghSlider(), hypSlider(), nigSlider() 
 Financial market yield data: foofit(); mode:fooMode(); moments: fooMean(), fooVar(),fooSkew(), fooKurt(); Robust correspondence：fooMED(), fooIQR(),fooSKEW(), fooKURT(); (foo: abbreviation corresponding to gh,ght,hyp,nig, etc.
@@ -140,5 +142,115 @@ print()/plot()/summary() - Fit object analysis
 (4) Evaluation and visualization
 • qqvg() - Draw Q-Q graph
 • ppvg() - Draw a P-P diagram
+
+
+6.5 About GLD
+Davies:
+description: mainly used in the implementation of the Davies quantile function, but also deals with the Generalized Lambda Distribution (GLD). GLD can be used to model non-normally distributed data and is widely used in finance, statistics and engineering.
+ Core functions
+• Handle the Davies quantile function
+Calculate the density, distribution function, quantile, and random number generation of the GLD distribution
+• Calculate the expected value of the GLD
+• Provide numerical integration method for approximate calculation
+(1) Basic distribution function
+dgld() - Calculate the density function of the GLD distribution (PDF)
+pgld() - Compute the cumulative distribution function (CDF) of the GLD distribution
+• qgld() - Calculates the quantile of the GLD distribution
+• rgld() - Generates random numbers for the GLD distribution
+(2) Calculate the expected value of GLD
+• Expect.gld () - Calculates the expected value of GLD
+approx() - Approximate values are computed using numerical integration methods
+
+fBasics:
+description: Including density, distribution, quantile and random number generation.
+Core functions
+• Calculate the density, distribution function, quantile and random number of the GLD distribution
+• Fit the GLD distribution
+• Estimate GLD parameters
+• Provide optimization methods for parameters such as maximum likelihood estimation (MLE)
+• Calculate the mode, median, interquartile distance, skewness and kurtosis of the GLD
+Classification of main functions
+(1) Basic distribution function
+• dgld() - Calculates the GLD density
+pgld() - Calculates the cumulative distribution of GLD
+• qgld() - Calculates the GLD quantile
+• rgld() - Generates GLD random numbers
+(2) GLD distribution fitting
+• gldFit() - Fits the GLD distribution
+• Expect.gld () - Calculate the expected value of GLD
+• nlminb() - Fits the GLD using optimization methods
+• fdISTFIT() - The object where the fit results are stored
+(3) Statistical moment calculation
+• gldMode() - Calculates the GLD mode
+• gldMED() - Calculates the median GLD
+• gldIQR() - Calculates the GLD quartile distance
+• gldSKEW() - Calculates GLD skew
+• gldKURT() - calculates GLD kurtosis
+(4) Evaluate the fitting effect
+• hist() - Plots the histogram of the GLD fit
+• goF() - Calculates GLD goodness of fit
+• ad/cvM/ks-Anderson-Darling, Cramer-von-Mises and Kolmogorov-Smirnov statistical tests
+fdISTFIT() - Stores GLD fit objects and can be used for fit evaluation
+(5) Histogram box division method
+• fd/scott/Sturges-freedman-Diaconis rules, Scott rules, Sturges rules
+
+gld:
+Core functions
+• Calculate the density, distribution function, quantile and random number of the GLD distribution
+GLD parameter estimation (using adaptive grid search and optimization method)
+• Fit the GLD distribution
+• GLD compatibility check
+• Q-Q plots are drawn for fit evaluation
+Classification of main functions
+(1) Basic distribution function
+dgl() - Calculates the density of the GLD distribution
+• dgld() - Calculates the quantile density of the GLD distribution
+• dpl() - Calculates the GLD distribution function
+• qdgl() - Calculates the GLD quantile
+• rgl() - Generates GLD random numbers
+(2) Parameter estimation
+• starship() - Parameter optimization using adaptive grid search
+• optim() - Further optimization of parameters
+• gl.check.lambda() - Checks the rationality of the GLD parameters
+(3) Evaluation and visualization
+• qqgld() - Draw Q-Q graph
+• plotgl() - Plots the GLD density function
+• plot(), print(), summary() - View the fit results
+
+lmomco:
+description: Provides a statistical method based on L-moments for parameter estimation of GLD distributions and supports probability-weighted moment (PWM) estimation.
+Core functions
+• Calculate L-moment and PWM moment
+• Parameter estimation of GLD distribution based on L-moment method
+• Parameter rationality test
+• Calculate the cumulative distribution, quantile, and density function of GLD
+• Generate GLD random numbers
+• Evaluate the fit effect
+ Classification of main functions
+(1) L-moment calculation
+• lmom.ub() - Calculates the unbiased L-moment
+• TLmoms() - Calculate trim L-moments
+• PWM.ub () - Calculate unbiased probability weighted moment (PWM)
+• pwm2lmom() - PWM converted to L-moment
+(2) GLD parameter estimation
+• pargld()/parTlGld() - Calculates GLD parameters based on L-moments
+• par.valid()/pargld.valid() - Checks the rationality of the parameters
+• vec2par() - Converts the parameters to model parameters
+• lmom2par() -L-moment converted to parameter
+• lmomgl() - Calculates the L-moment representation of the GLD parameter
+(3) Distribution function calculation
+• cdfgld() - Calculates the GLD cumulative distribution
+• quagld() - Calculates the GLD quantile
+• pdfgld() - Calculates the GLD density function
+• rlmomco() - Generates random numbers
+(4) Evaluate the fitting effect
+• check.fs() - Evaluate the fit method
+• check.pdf() - Evaluates the density function
+
+
+
+6.6 Application
+
+
 
 
