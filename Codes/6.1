@@ -7,18 +7,18 @@ y <- timeSeries(DowJones30[, "HWP"], charvec =
                 as.character(DowJones30[, 1]))   #让时间序列数据以日期字符格式存储
 yret <- na.omit(diff(log(y)) * 100)   #diff(log(y)) 计算相邻数据的对数差，即 对数收益率；na.omit() 删除 NA(not available) 值，以防止数据缺失影响计算
 ## Fitting
-ef <- density(yret)
-ghdfit <- fit.ghypuv(yret, symmetric = FALSE,
+ef <- density(yret)  #计算经验密度估计，即数据的平滑直方图  
+ghdfit <- fit.ghypuv(yret, symmetric = FALSE,     #参数估计，最大迭代次数=1000
                      control = list(maxit = 1000))
 hypfit <- fit.hypuv(yret, symmetric = FALSE,
                     control = list(maxit = 1000))
 nigfit <- fit.NIGuv(yret, symmetric = FALSE,
                     control = list(maxit = 1000))
 ## Densities
-ghddens <- dghyp(ef$x, ghdfit)
-hypdens <- dghyp(ef$x, hypfit)
+ghddens <- dghyp(ef$x, ghdfit)    #dghyp(x, model) 计算 指定分布的概率密度函数（PDF）
+hypdens <- dghyp(ef$x, hypfit) 
 nigdens <- dghyp(ef$x, nigfit)
-nordens <- dnorm(ef$x, mean = mean(yret), sd = sd(c(yret[, 1])))
+nordens <- dnorm(ef$x, mean = mean(yret), sd = sd(c(yret[, 1])))  #dnorm(x, mean, sd) 计算 正态分布（Normal Distribution） 的密度，这里是为了与拟合分布做对比
 col.def <- c("black", "red", "blue", "green", "orange")
 plot(ef, xlab = "", ylab = expression(f(x)), ylim = c(0, 0.25))
 lines(ef$x, ghddens, col = "red")
