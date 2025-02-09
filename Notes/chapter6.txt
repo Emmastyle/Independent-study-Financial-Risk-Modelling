@@ -1,0 +1,22 @@
+6.4 R software package related to GHD
+Rmetrics: R language package suite for financial engineering and computational finance, focusing on financial modeling, risk management, asset pricing, time series analysis, and more. It mainly consists of several R packages, including:
+• fBasics (Financial Statistics)
+• fPortfolio (Portfolio Optimization)
+• fAssets (Asset Modeling)
+• fOptions (Option Pricing)
+• fGarch (GARCH Time Series Modeling)
+• timeSeries (Time series data processing)
+• fImport (Data Import)
+• fExtremes (Modeling Extreme Events)
+• fRegression (regression analysis)
+Different distribution models: Density function values, probabilities, quantiles and generating random numbers.
+                               Density function (starts with d), distribution function (starts with p), quantile function (starts with q) and random number generation (starts with r)
+Robust Estimator: An estimator that is insensitive to extreme values. e.g.mean, median, IQR, MAD ( MAD = \text{median}(|X_i - \text{median}(X)|) ), Spearman Rank Correlation.
+ghSlider(), hypSlider(), nigSlider().
+NIG: Normal Inverse Gaussian Distribution, a special case of the Generalized Hyperbolic (GH) distributions. Heavy-tailed and skewed distributions,self-decomposable,Modeling of financial time series.
+
+f(x | \alpha, \beta, \delta, \mu) = \frac{\alpha \delta K_1(\alpha \sqrt{\delta^2 + (x - \mu)^2})}{\pi \sqrt{\delta^2 + (x - \mu)^2}} e^{\delta \sqrt{\alpha^2 - \beta^2} + \beta (x - \mu)}
+•	\alpha &gt;  0 steepness of the control distribution
+• \beta control skewness of distribution
+•	\delta &gt;  0 scale of control distribution
+• \mu is a location parameter
