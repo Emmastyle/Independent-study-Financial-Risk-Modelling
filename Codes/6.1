@@ -2,10 +2,10 @@ library(ghyp)
 library(timeSeries)
 library(fBasics)
 ## Return calculation
-data(DowJones30)
+data(DowJones30)   #导入道琼斯30只股票的时间序列数据
 y <- timeSeries(DowJones30[, "HWP"], charvec =
-                as.character(DowJones30[, 1])) 
-yret <- na.omit(diff(log(y)) * 100)
+                as.character(DowJones30[, 1]))   #让时间序列数据以日期字符格式存储
+yret <- na.omit(diff(log(y)) * 100)   #diff(log(y)) 计算相邻数据的对数差，即 对数收益率；na.omit() 删除 NA(not available) 值，以防止数据缺失影响计算
 ## Fitting
 ef <- density(yret)
 ghdfit <- fit.ghypuv(yret, symmetric = FALSE,
