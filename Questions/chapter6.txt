@@ -1,1 +1,6 @@
-
+diff(log(y)) 计算变化时，如果相邻值中有 NA，就会导致 NA 传播。 如果 yret 有太多 NA，使用 na.omit(yret) 可能会 删除大量数据，导致 yret 过短，甚至可能为空。
+sol: 
+y <- na.approx(y)  # 用线性插值填充 NA
+yret <- na.omit(diff(log(y)) * 100)
+y <- na.omit(y)  # 先删除 NA
+yret <- diff(log(y)) * 100  # 计算收益率
