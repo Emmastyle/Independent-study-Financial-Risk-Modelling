@@ -132,3 +132,62 @@
 	•	包含多种演示文件和数据集：
 	•	数据集包括 danish, bmw, siemens, ram 等
 	•	提供用户指南和演示文件，帮助理解和应用函数
+
+7.3.4
+📦 fExtremes 包函数列表
+
+1️⃣ 数据预处理与阈值选择（Data Preprocessing & Threshold Selection）
+	•	blockMaxima() - 分块极大值法（Block Maxima Method）
+	•	findThreshold() - 阈值选择（Threshold Selection）
+	•	pointProcess() - 泊松点过程（Poisson Point Process）拟合
+	•	decluster() - 对数据进行去聚类处理（Declustering）
+
+2️⃣ 极值分布模型（Extreme Value Models）
+	•	empPlot() - 经验分布函数图
+	•	qqPlot() - Q-Q 图（分布拟合检查）
+	•	mePlot() - 平均超额函数图
+	•	mrlPlot() - 均值超越图（Mean Residual Life Plot）
+	•	recordPlot() - 极值记录图
+	•	exceedPlot() - 超额分布图
+	•	gpdFit() - GPD 模型拟合
+	•	gevFit() - GEV 模型拟合
+	•	gumbelFit() - Gumbel 模型拟合
+
+3️⃣ 分布拟合与参数估计（Parameter Estimation and Fitting）
+	•	normMeanExcessFit() - 正态分布的均值超额拟合
+	•	migMeanExcessFit() - 微观极值分布拟合
+	•	lnormMeanExcessFit() - 对数正态分布均值超额拟合
+	•	llogisMeanExcessFit() - 对数逻辑斯蒂分布拟合
+	•	snlPOT() - 半正态分布 POT 模型拟合
+	•	gevSlider() - GEV 分布参数调整与可视化
+	•	gpdSlider() - GPD 分布参数调整与可视化
+
+4️⃣ 风险度量函数（Risk Measures）
+	•	tailRisk() - 尾部风险测量
+	•	gpdRiskMeasures() - 基于 GPD 的风险度量
+	•	tailPlot() - 尾部分布图
+	•	gpdTailPlot() - GPD 分布的尾部风险可视化
+	•	riskMeasures() - VaR（Value at Risk）和 CVaR（Conditional Value at Risk）风险度量计算
+
+5️⃣ 可视化工具（Visualization Tools）
+	•	hillPlot() - Hill 指数图（极值指数估计）
+	•	sharpnormPlot() - Hill 指数与形态图
+	•	levelPlot() - 极值返回水平图（Return Level Plot）
+	•	summary() - 生成模型拟合的统计摘要
+	•	print() - 打印模型拟合结果
+	•	plot() - 绘制分布拟合与诊断图
+
+6️⃣ 波动性聚类分析（Volatility Clustering Analysis）
+	•	blockTheta() - 分块波动分析
+	•	clusterTheta() - 聚类波动分析
+	•	runTheta() - 滑动窗口波动分析
+	•	ferroSegersTheta() - Ferro-Segers 方法（2003）用于波动性分析
+	•	thetaSim() - 模拟波动性聚类过程
+	•	show() - 展示数据聚类结果
+	•	indexPlot() - 聚类索引图
+	•	indexPlot() - 展示聚类的时间序列特征
+
+7️⃣ 高级统计分析与检验（Advanced Statistical Analysis & Testing）
+	•	ksTest() - Kolmogorov-Smirnov 检验
+	•	adTest() - Anderson-Darling 检验
+	•	chiTest() - 卡方检验（Chi-Square Test）
