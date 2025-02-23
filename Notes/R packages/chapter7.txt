@@ -1,3 +1,4 @@
+7.3.1
 📦 evd 包函数列表
 
 1️⃣ 单因素极值分布函数（Univariate Extreme Value Distributions）
@@ -39,3 +40,42 @@
 	•	gmar() - 广义马尔可夫随机过程模拟
 	•	mma() - 多元马尔科夫极值模拟
 	•	exi() - 计算极值指数
+
+7.3.2
+📦 evdbayes 包函数列表
+
+1️⃣ 分布与模型类型
+
+该包包含四种不同的 EVT 模型：
+	•	generalized extreme value distribution（广义极值分布）
+	•	generalized Pareto distribution（广义帕累托分布）
+	•	order statistics（顺序统计量）
+	•	Poisson point process model（泊松点过程模型）
+
+2️⃣ 先验分布函数（Prior Distributions）
+
+用于指定先验分布的函数：
+	•	prior.prob() - 指定概率先验分布
+	•	prior.quant() - 指定分位数先验分布
+	•	prior.norm() - 指定正态分布先验
+	•	prior.loglognorm() - 指定对数正态分布先验
+
+3️⃣ 后验分布函数（Posterior Distributions）
+	•	posterior() - 生成一个马尔可夫链的后验分布
+	•	evprior() - 创建先验分布对象，用于生成后验分布
+	•	evprior() 对象 - 可用作 posterior() 的输入对象
+
+4️⃣ MCMC 模型诊断与优化
+	•	mcposterior() - 用于检查生成的马尔可夫链的合理性和优化（依赖于 coda 包）
+	•	optim() - 用于后验分布函数的优化（R 自带函数）
+
+5️⃣ 模型图形检验函数（Graphical Model Diagnostics）
+
+用于 EVD 模型的图形检验：
+	•	rl.pst() - GEV 分布函数的返回值水平图检验
+	•	rl.pred() - GEV 分布函数的回归和预测分析
+
+6️⃣ 额外资源
+	•	文档和示例文件包含在安装目录下：
+	•	示例数据：rainfall 数据集
+	•	用户指南：evdbayesGuide.pdf
