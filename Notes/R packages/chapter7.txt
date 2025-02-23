@@ -1,5 +1,7 @@
 7.3.1
-📦 evd 包函数列表
+📦 evd 包函数列表 
+extreme value distribution
+专门用于 极值理论（Extreme Value Theory, EVT） 的统计分析包。它主要用于研究随机变量的极端行为
 
 1️⃣ 单因素极值分布函数（Univariate Extreme Value Distributions）
 	•	extreme() - 极值分布
