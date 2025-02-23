@@ -1,1 +1,41 @@
+📦 evd 包函数列表
 
+1️⃣ 单因素极值分布函数（Univariate Extreme Value Distributions）
+	•	extreme() - 极值分布
+	•	frechet() - 弗雷歇分布
+	•	gev() - 广义极值分布（Generalized Extreme Value Distribution, GEV）
+	•	gpd() - 广义帕累托分布（Generalized Pareto Distribution, GPD）
+	•	gumbel() - 冈贝尔分布（Gumbel Distribution）
+	•	order() - 顺序统计量分布
+	•	rweibull() - 逆韦布尔分布
+
+2️⃣ 双因素和多因素极值分布函数（Bivariate and Multivariate Extreme Value Distributions）
+	•	bvevd() - 双因素极值分布（Bivariate EVD）
+	•	mvevd() - 多因素极值分布（Multivariate EVD）
+
+3️⃣ 非参数极值分布估计函数（Non-parametric Estimation）
+	•	abvnonpar() - 双因素非参数极值分布估计
+	•	amvnonpar() - 多因素非参数极值分布估计
+	•	qcbvnonpar() - 二维分布的极值分布估计
+
+4️⃣ 辅助函数（辅助建模和可视化）
+	•	fgev() - 广义极值分布模型拟合
+	•	fpot() - 广义帕累托分布模型拟合
+	•	forder() - 顺序统计量分布拟合
+	•	fextreme() - 极值分布模型拟合
+	•	mrplot() - 极值残差寿命图
+	•	tcplot() - 临界值选择图
+	•	chipot() - 依赖性评测图
+
+5️⃣ 参数估计与检验工具（Parameter Estimation & Testing）
+	•	confint() - 计算拟合对象的模型置信区间
+	•	anova() - 方差分析，检验嵌套模型差异
+	•	fbved() - 双因素极值分布参数估计
+	•	fbvpot() - 双因素帕累托分布参数估计
+	•	hbvevd() - 双因素极值分布的核密度函数估计
+
+6️⃣ 马尔科夫过程模拟与指标计算（Markov Process Simulation & Index Calculation）
+	•	evmc() - 指定马尔可夫过程的极值模型模拟
+	•	gmar() - 广义马尔可夫随机过程模拟
+	•	mma() - 多元马尔科夫极值模拟
+	•	exi() - 计算极值指数
