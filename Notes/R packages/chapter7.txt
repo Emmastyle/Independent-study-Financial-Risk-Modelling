@@ -239,3 +239,107 @@ extRemes 包在实现了 ismev 包功能的基础上，提供了图形用户界�
 4️⃣ 文档与资源
 	•	提供详细的 EVT 教学和应用指南
 	•	提供在线教程和相关资源：UCAR Toolkit
+
+7.3.6
+📦 POT 包函数列表
+
+1️⃣ GPD 分布与随机生成函数（GPD Distribution & Random Generation）
+	•	rgpd() - 生成随机 GPD 数据
+	•	dgpd() - 计算 GPD 的密度函数值
+	•	qgpd() - GPD 的分位数函数（尾部权重分布）
+
+2️⃣ 阈值选择与诊断工具（Threshold Selection & Diagnostics）
+	•	tcplot() - 阈值选择图（Threshold Choice Plot）
+	•	mrplot() - 均值超额图（Mean Residual Life Plot）
+	•	lmomplot() - 画出下偏风险图（L-moment Plot）
+	•	dipplot() - 超值点的分布散布图（Dispersion Plot）
+
+3️⃣ 单变量与双变量 GPD 拟合（Univariate & Bivariate GPD Fitting）
+	•	fitgpd() - 对单变量 GPD 进行最大似然估计（MLE）
+	•	fitbvgpd() - 对双变量 GPD 进行拟合分析
+
+4️⃣ 点过程建模与拟合（Point Process Modeling）
+	•	fitpp() - 对 GPD 点过程模型进行估计（Point Process Fitting）
+
+5️⃣ 尾部相关性与分布特征检验（Tail Dependence & Distribution Diagnostics）
+	•	fshape() - GPD 模型形状参数估计
+	•	gpd.fiscale() - GPD 分布的尾部分位数密度估计
+	•	gpd.firl() - GPD 模型的尾部极值估计
+
+6️⃣ 统计分布距离与检验（Statistical Distance & Testing）
+	•	距离度量（用于分布拟合评估）
+	•	均值幂密度散度（Mean Power Density Divergence）
+	•	中位数（Median）
+	•	Pickand 最大尤度比检验（Pickand’s Maximum Likelihood Ratio Test）
+
+7️⃣ 非超值概率建模（Non-Exceedance Modeling）
+	•	支持非超值概念下的建模与估计
+	•	拟合单变量和双变量 GPD 的相关性模型（如 Logistic, Asymmetric Logistic, Gumbel 等）
+
+8️⃣ 可视化与模型诊断（Visualization & Model Diagnostics）
+	•	plot() - 自动生成图形以展示拟合结果
+	•	P-P 和 Q-Q 图 - 评估模型拟合的分布特征
+
+7.3.7
+📦 QRM 包函数列表
+
+1️⃣ 密度函数与分布函数（Density & Distribution Functions）
+	•	dGPD() - 计算广义帕累托分布（GPD）的密度函数值
+	•	dGumbel() - 计算 Gumbel 分布的密度函数值
+	•	fit.GEV() - GEV 模型的拟合（使用极大似然估计法，ML）
+
+2️⃣ 模型估计与优化（Model Estimation & Optimization）
+	•	optim() - 通用优化器（用于模型参数估计与优化）
+	•	fit.GPD() - GPD 模型的拟合（类似于 fit.GEV()，采用 ML 方法）
+	•	optim() - 约束优化器，支持对 GPD 和 GEV 模型参数的估计
+
+3️⃣ POT 方法与阈值选择（POT Method & Threshold Selection）
+	•	findthreshold() - 选择最佳阈值
+	•	MEplot() - 平均超额图（Mean Excess Plot），评估超额行为
+	•	hillPlot() - Hill 指数图（极值指数估计）
+
+4️⃣ GPD 模型拟合与诊断（GPD Model Fitting & Diagnostics）
+	•	plotTail() - GPD 模型的尾部拟合图
+	•	plotFittedGPDvsEmpiricalExcesses() - GPD 模型与经验超额的拟合对比图
+	•	xiplot() - 形状参数诊断图
+	•	showRM() - 展示 GPD 模型的风险测量结果
+	•	RiskMeasures() - 计算风险度量值（如 VaR 和 CVaR）
+
+5️⃣ 极值回归与风险建模（Extreme Value Regression & Risk Modeling）
+	•	extremalPP() - 极值点过程建模
+	•	plot.PP() - 极值点过程模型的图形展示
+	•	seMPP() - 标准误差计算（Standard Error for MPP）
+
+6️⃣ 回归分析与极值建模（Regression & EVT Modeling）
+	•	externalPP() - 构建极值点过程模型并进行回归分析
+	•	plot.PP() - 绘制点过程模型结果
+	•	seMPP() - 对点过程模型进行标准误差估计
+
+7.3.8
+📦 Renext 包函数列表
+
+1️⃣ 探索性数据分析（EDA）
+	•	plot() - 超值图（用于可视化超值数据的分布）
+	•	weibplot() - 绘制超值的 Weibull 分布拟合图，用于检查数据是否接近某种分布
+	•	barplotRenouv() - 画出特定时间区间内的超值数量柱状图
+
+2️⃣ 模型拟合与估计（Model Fitting & Estimation）
+	•	Renouv() - 生成基于更新过程的极值分布随机样本
+	•	rRenouv() - 随机生成符合更新模型分布的数据
+	•	optim() - 优化函数（用于估计未知参数）
+
+3️⃣ 模型诊断与有效性检验（Model Diagnostics & Validation）
+	•	RLplot() - 单独绘制风险水平图（Return Level Plot）
+	•	plot.Rendata() - 用于 Rendata 对象的模型可视化
+	•	readXML() - 读取 XML 格式数据到 Rendata 对象
+	•	gof.data() - 进行数据拟合优度检验
+	•	gof.Exp.test() - 进行指数分布的拟合优度检验
+
+4️⃣ 统计推断与置信区间计算（Statistical Inference & Confidence Intervals）
+	•	mom2par() - 依据矩估计法（Method of Moments）计算参数
+	•	gof.data() - 检验数据分布是否符合所拟合的模型
+	•	gof.Exp.test() - 对指数分布进行拟合优度检验
+
+5️⃣ 模型效果评估与风险度量（Model Evaluation & Risk Measures）
+	•	extreme() - 进行极值数据的统计分析
+	•	riskEstimate() - 进行风险估计（例如 VaR 和 CVaR 计算）
