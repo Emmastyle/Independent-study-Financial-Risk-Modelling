@@ -10,3 +10,9 @@ P\{M_n \leq z\} = P\{X_1 \leq z, \cdots, X_n \leq z\} the probability that the m
 Xn i.i.d this joint probability can be split into the product of a single probability: 
 P\{X_1 \leq z\} \times P\{X_2 \leq z\} \times \cdots \times P\{X_n \leq z\}   cdf [F(z)]^n
   problem: F(n) often unknown, as n increases, this leads to fairly divergent results.
+
+F^n(x) = P\left( \max\{ X_1, X_2, \dots, X_n \} \leq x \right) = [F(x)]^n，as  n \to \infty , the distribution of maximum values will tend to a stable distribution of extreme values. 
+According to Fisher–Tippett–Gnedenko theorem, the distribution of the maximum values converges to one of three families of extreme values: 
+•	Gumbel 分布（对数极值分布）
+•	Fréchet 分布（重尾分布）
+•	Weibull 分布（有限尾部分布）
