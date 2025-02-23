@@ -79,3 +79,56 @@
 	•	文档和示例文件包含在安装目录下：
 	•	示例数据：rainfall 数据集
 	•	用户指南：evdbayesGuide.pdf
+
+7.3.3
+📦 evir 包函数列表
+
+1️⃣ 探索性数据分析 (EDA) 函数
+	•	emplot() - 绘制经验分布函数图
+	•	hill() - Hill 估计（用于超额极值指数估计）
+	•	meplot() - 平均超额函数图（Mean Excess Plot）
+	•	gplot() - Q-Q 图和 P-P 图（用于检验数据分布）
+	•	index() - 估计极端值指数
+	•	records() - 展示数据中的极值记录
+
+2️⃣ BMM（Block Maxima Method）方法
+	•	gev() - 广义极值分布（Generalized Extreme Value Distribution, GEV）拟合
+	•	gumble() - 冈贝尔分布（Gumbel Distribution）拟合
+	•	return.level() - 绘制极值分布的 return level 图（回归水平图）
+
+3️⃣ POT（Peak Over Threshold）方法
+	•	gpd() - 广义帕累托分布（Generalized Pareto Distribution, GPD）拟合
+	•	excess() - 超额分布图
+	•	qq() - 超额数据的 Q-Q 图
+	•	meplot() - 平均超额图（与 EDA 重复，用于评估超额行为）
+	•	nplot() - 残差诊断图
+	•	spd() - 半参数分布绘图
+	•	gpd.q() - 返回 GPD 模型的分位数
+	•	gpd.sfall() - 进行 GPD 模型的敏感性分析
+	•	riskmeasures() - 计算 GPD 模型下的风险度量（如 VaR）
+
+4️⃣ 二元 POT 方法（Bivariate POT Method）
+	•	gpd.biv() - 二元广义帕累托分布模型
+	•	gpd.plot() - 二元 GPD 数据绘图，包括不同超额阈值的相关性和残差图
+
+5️⃣ 泊松点过程 (Poisson Point Process) 相关函数
+	•	potf() - 估计泊松点过程模型
+	•	pot.plot() - 绘制泊松点过程相关图形（如阈值超越频率）
+
+6️⃣ 其他函数
+	•	gpdlik() - 计算 GPD 对象的似然值
+	•	shape() - 评估 GPD 模型形状参数
+	•	quant() - GPD 模型的分位数计算
+
+7️⃣ 诊断与可视化工具
+	•	plot() - 绘制模型图（包括 GPD 和 GEV 模型的诊断图）
+	•	qq() - Q-Q 图（用于分布检验）
+	•	pp() - P-P 图（分布拟合度检验）
+
+8️⃣ 文档与示例
+	•	提供 GPD 和 GEV 模型的 d, p, q, r 函数（与 evd 包一致）
+	•	GEV 分布相关：dgev(), pgev(), qgev(), rgev()
+	•	GPD 分布相关：dgpd(), pgpd(), qgpd(), rgpd()
+	•	包含多种演示文件和数据集：
+	•	数据集包括 danish, bmw, siemens, ram 等
+	•	提供用户指南和演示文件，帮助理解和应用函数
