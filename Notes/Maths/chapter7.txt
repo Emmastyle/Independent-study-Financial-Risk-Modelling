@@ -1,10 +1,10 @@
 7.1
 EVT：Around the median, the data is not centrally distributed, but rather spread out. 在中位数附近，数据没有集中分布，而是分散得比较开。
--block maxima method  分块极值模型
+-block maxima method, BMM  分块极值模型
 -peaks-over-thresholdmethod, POT  高于阈值頂点模型
 -Poisson Process
 7.2
-7.2.1 block maxima method
+7.2.1 BMM
 M_n = \max \{ X_1, X_2, \dots, X_n \}
 P\{M_n \leq z\} = P\{X_1 \leq z, \cdots, X_n \leq z\} the probability that the maximum value of the n random variables does not exceed z.
 Xn i.i.d this joint probability can be split into the product of a single probability: 
@@ -16,3 +16,11 @@ According to Fisher–Tippett–Gnedenko theorem, the distribution of the maximu
 •	Gumbel 分布（对数极值分布）
 •	Fréchet 分布（重尾分布）
 •	Weibull 分布（有限尾部分布）
+
+7.2.2 rth largest order
+Compensate for BMM: The parameter estimation of unknown distribution has great uncertainty.
+
+7.2.3 POT
+Sample observations above a threshold
+  X - u  Conditional Excess Distribution   
+Generalized Pareto Distribution, GPD
