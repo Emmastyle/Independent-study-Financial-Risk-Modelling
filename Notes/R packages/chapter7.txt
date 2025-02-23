@@ -191,3 +191,51 @@
 	•	ksTest() - Kolmogorov-Smirnov 检验
 	•	adTest() - Anderson-Darling 检验
 	•	chiTest() - 卡方检验（Chi-Square Test）
+
+7.3.5
+📦 ismev 包函数列表
+
+ismev 包是基于 S. Coles 的 R-port 函数开发的，主要包括 GEV 模型、GPD 模型、泊松点过程模型和顺序统计模型，帮助用户进行 POT 模型阈值选择和极值分布建模。
+
+1️⃣ GEV 模型相关函数
+	•	gev.fit() - GEV 模型的极大似然估计（MLE）
+	•	gum.fit() - Gumbel 分布模型的极大似然估计
+	•	gev.diag() - 对 GEV 模型的诊断检验（包括图形检查）
+	•	gev.prof() - GEV 模型的对数似然轮廓图
+	•	gevprofxi() - 绘制形状参数（xi）的置信区间轮廓图
+
+2️⃣ POT 方法（Peaks Over Threshold）相关函数
+	•	pdf.fit() - GPD 模型的密度函数估计
+	•	pp.fit() - GPD 模型的极大似然估计
+	•	gpd.diag() - GPD 模型的诊断检验
+	•	gpd.prof() - GPD 模型的对数似然轮廓图
+	•	gpd.profxi() - GPD 模型的形状参数轮廓图
+
+3️⃣ 泊松点过程与顺序统计模型
+	•	rlar.fit() - 拟合顺序统计量模型
+	•	rlar.diag() - 顺序统计量模型的诊断分析
+
+4️⃣ 模型评估与置信区间计算
+	•	mrl.opt() - 均值超额函数（MRL）分析
+	•	mrl.plot() - 绘制均值超额函数图（用于 GPD 或点过程模型的诊断）
+	•	prof() - 对 GEV 或 GPD 模型进行阈值选择
+	•	profxi() - 形状参数的置信区间评估
+📦 extRemes 包函数列表
+
+extRemes 包在实现了 ismev 包功能的基础上，提供了图形用户界面（GUI），主要用于 EVT 的教学和应用分析，此外还包括数据去聚类、自助法（Bootstrap）、极端数据建模和风险分析。
+
+1️⃣ 基本极值分析函数
+	•	同 ismev 包中的大部分函数均有实现
+
+2️⃣ 额外功能与高级分析
+	•	deCluster() - 数据去聚类处理
+	•	bootstrap() - 自助法（Bootstrap）重新采样分析
+	•	extremeValueModel() - 极端数据的建模函数
+	•	riskIndex() - 进行风险度量分析（VaR 和 CVaR 等）
+
+3️⃣ GUI 支持
+	•	提供 Tcl/Tk 图形用户界面（GUI），便于进行直观的极值分析
+
+4️⃣ 文档与资源
+	•	提供详细的 EVT 教学和应用指南
+	•	提供在线教程和相关资源：UCAR Toolkit
