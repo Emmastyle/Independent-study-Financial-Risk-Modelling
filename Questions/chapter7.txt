@@ -1,3 +1,4 @@
 我们可推出两个分布的形状参数 是相同的，且与所选极大值分块的数目相 互独立。进一步推断可知，<0时的分布包含一个上界w —a/ ，如果参数值满足 6 >0，该分布没有右边界。当极限 一0时，GPD收敛于参数为1/ c的指数分布。
 怎么样选择合适的阈值
+平均超越函数，MRL（Mean Residual Life）图帮助选择合适的阈值 u 来拟合广义帕累托分布（GPD）
 block maxima and rth largest are tied together?
