@@ -3,11 +3,23 @@ Study the probability distribution of a maximum or minimum value.
 M_n = \max \{X_1, X_2, \dots, X_n\}
 当  n \to \infty  时，  M_n  的分布趋向于什么样的形式。
 
+what is return level:
+重现期（Return Period）计算的，重现期是指在某个给定时间间隔内（例如 100 年），这种极端事件平均会发生一次的概率。
+基于重现期，如果事件的重现期是  T  年，那么 Return Level  z_T  是指在这个时间内，极端事件（比如降雨量、洪水水位等）将会超过的水平。
+根据 GEV 分布，Return Level 的公式为：
+z_T = \mu + \frac{\sigma}{\xi} \left( \left( -\log \left( 1 - \frac{1}{T} \right) \right)^{-\xi} - 1 \right)
+e.g
+50 年一遇的降雨量是多少（即 Return Level 对应 50 年重现期的值）。
+if return level=100mm, 在任何一年内，降雨量超过 100 毫米的概率是  \frac{1}{50}, 换句话说，100 毫米的降雨量每 50 年大约会发生一次。
+
+
+
 7.1
 EVT：Around the median, the data is not centrally distributed, but rather spread out. 在中位数附近，数据没有集中分布，而是分散得比较开。
 -block maxima method, BMM  分块极值模型
 -peaks-over-thresholdmethod, POT  高于阈值頂点模型
 -Poisson Process
+
 7.2
 7.2.1 BMM
 M_n = \max \{ X_1, X_2, \dots, X_n \}
