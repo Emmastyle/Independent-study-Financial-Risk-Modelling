@@ -5,6 +5,13 @@ M_n = \max \{X_1, X_2, \dots, X_n\}
 
 what is return level:
 重现期（Return Period）计算的，重现期是指在某个给定时间间隔内（例如 100 年），这种极端事件平均会发生一次的概率。
+\text{Return Period} = -\frac{1}{1 - F(x)} / 2
+其中：
+	•	 F(x)  是 GEV 分布的 CDF 值，表示达到该损失水平的概率。
+	•	 1 - F(x)  是该损失水平未发生的概率。
+	•	取倒数可以得到发生这种极端事件的期望年数。
+
+
 基于重现期，如果事件的重现期是  T  年，那么 Return Level  z_T  是指在这个时间内，极端事件（比如降雨量、洪水水位等）将会超过的水平。
 根据 GEV 分布，Return Level 的公式为：
 z_T = \mu + \frac{\sigma}{\xi} \left( \left( -\log \left( 1 - \frac{1}{T} \right) \right)^{-\xi} - 1 \right)
