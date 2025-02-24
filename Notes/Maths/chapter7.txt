@@ -1,3 +1,8 @@
+what is EVT:
+Study the probability distribution of a maximum or minimum value.
+M_n = \max \{X_1, X_2, \dots, X_n\}
+当  n \to \infty  时，  M_n  的分布趋向于什么样的形式。
+
 7.1
 EVT：Around the median, the data is not centrally distributed, but rather spread out. 在中位数附近，数据没有集中分布，而是分散得比较开。
 -block maxima method, BMM  分块极值模型
