@@ -48,3 +48,7 @@ Compensate for BMM: The parameter estimation of unknown distribution has great u
 Sample observations above a threshold
   X - u  Conditional Excess Distribution   
 Generalized Pareto Distribution, GPD
+
+确定阈值：
+平均超越函数（Mean Residual Life, MRL）
+e(u) = E[X - u \mid X > u]， 随机变量X，阈值u
