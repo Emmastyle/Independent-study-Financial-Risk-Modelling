@@ -2,3 +2,4 @@
 怎么样选择合适的阈值
 平均超越函数，MRL（Mean Residual Life）图帮助选择合适的阈值 u 来拟合广义帕累托分布（GPD）
 block maxima and rth largest are tied together?
+7.3 error cannot find plot(BAFit) function
