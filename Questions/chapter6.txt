@@ -132,4 +132,9 @@ Adding up all data points 是指将整个数据集都用来计算统计量（比
 	1.	先计算全局均值和标准差，了解数据的总体分布。
 	2.	再用 Rolling Window 分析短期波动，识别异常点。
 
-如果你告诉我你的具体数据类型或分析目标，我可以给你一个更明确的推荐！ 🚀
+
+how to define the extreme data?
+machine learning
+Isolation Forest（孤立森林）
+DBSCAN（基于密度的聚类）
+
