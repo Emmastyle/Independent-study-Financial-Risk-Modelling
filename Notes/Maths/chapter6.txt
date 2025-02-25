@@ -1,0 +1,19 @@
+GLD
+定义基于分位数函数（Quantile Function），而不是概率密度函数（PDF）或累积分布函数（CDF）。
+GLD 的分位数函数  Q(u)  定义为：
+Q(u) = \lambda_1 + \frac{u^{\lambda_3} - (1 - u)^{\lambda_4}}{\lambda_2}
+其中，参数含义如下：
+	•	 u \in [0, 1] ：分位数的概率（例如  u = 0.5  表示中位数）。
+	•	 \lambda_1 （位置参数）：控制分布的位置（类似于均值）。位置参数：决定分布的位置，相当于将整个分布沿 x 轴平移。
+	•	 \lambda_2 （尺度参数）：控制分布的尺度（类似于标准差）。尺度参数：决定分布的宽度或波动性，类似于正态分布的标准差。
+	•	 \lambda_3 （形状参数）：控制左侧尾部形态（偏度/skewness）。
+	•	 \lambda_4 （形状参数）：控制右侧尾部形态（峰度/kurtosis）。
+  形状参数  \lambda_3  和  \lambda_4 
+  控制分布的偏度和峰度。
+	•	如果  \lambda_3 = \lambda_4 = 1 ，GLD 会退化为标准分布（例如均匀分布或正态分布的某种近似）。
+	•	 \lambda_3 \neq \lambda_4  会产生非对称分布。
+	•	更大的  \lambda_3  或  \lambda_4  值会增加分布的峰度（即“肥尾”现象）。
+
+pdf:
+f(x) = \frac{1}{Q{\prime}(u)}, where Q{\prime}(u) = \frac{\lambda_3 u^{\lambda_3 - 1} + \lambda_4 (1 - u)^{\lambda_4 - 1}}{\lambda_2}
+
