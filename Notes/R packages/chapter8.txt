@@ -1,0 +1,106 @@
+整理格式：
+	1.	包名称
+	2.	包介绍
+	3.	函数列表（按照功能分类）
+
+1. bayesGARCH 包
+
+介绍：
+bayesGARCH 包是对残差服从 Student’s t 分布的 GARCH (1, 1) 模型进行贝叶斯估计的工具。
+它依赖于 mvnorm 和 coda 包，可用于联合后验采样器的生成。
+
+函数分类及功能：
+	1.	模型估计及诊断函数
+	•	bayesGARCH() - 计算模型参数及协方差矩阵
+	•	formSmpl() - 生成样本及核心函数输出
+	2.	辅助函数
+	•	control - 控制参数列表，包括马尔可夫链长度、初始值等
+	•	验证函数 - 验证条件的形式并返回布尔值 (TRUE/FALSE)
+
+2. ccgarch 包
+
+介绍：
+ccgarch 包用于多元 GARCH 模型估计及相关分析。
+主要适用于 CC-GARCH 模型，使用条件相关性方法来进行建模。
+
+函数分类及功能：
+	1.	估计函数
+	•	dcc.estimation() - 估计 CC-GARCH 模型中的未知参数
+	•	dcc.results() - 提取稳健标准差结果
+	2.	对数似然函数
+	•	loglik.dcc() - 计算对数似然值
+	•	loglik.dcc1() 和 loglik.dcc2() - 分步计算对数似然
+	3.	稳定性及检验函数
+	•	stationarity() - 检查模型的平稳性条件
+	•	nt.test() - Hafner 和 Herwatz 检验
+	•	hh.test() - Nakatani 和 Teräsvirta 检验
+	•	jb.test() - 正态性假设检验
+	4.	模拟函数
+	•	dcc.sim() 和 eccc.sim() - 生成对预测参数的模拟
+
+3. fGarch 包
+
+介绍：
+fGarch 包是 Rmetrics 系列的一部分，主要用于单变量 ARCH 和 GARCH 模型的扩展和计算。
+使用 FORTRAN 进行密集计算，适用于处理复杂金融时间序列数据。
+
+函数分类及功能：
+	1.	模型拟合与优化函数
+	•	garchFit() - 进行 GARCH/APARCH 模型拟合
+	•	garchSpec() - 指定模型结构
+	2.	辅助分析函数
+	•	coef() - 提取系数
+	•	fitted() - 提取拟合值
+	•	residuals() - 提取残差
+	3.	预测与仿真函数
+	•	predict() - 生成预测结果
+	•	garchSim() - 生成模拟时间序列数据
+
+4. gogarch 包
+
+介绍：
+gogarch 包用于广义正交 GARCH (GO-GARCH) 模型的估计与分析。
+适用于多重 GARCH 模型的灵活计算。
+
+函数分类及功能：
+	1.	核心建模函数
+	•	gogarch() - 估计多元 GARCH 参数及协方差矩阵
+	2.	模型预测与诊断函数
+	•	predict() - 生成未来时间点的预测
+	•	show() - 显示模型摘要
+	3.	辅助函数
+	•	coef() - 提取模型参数
+	•	summary() - 显示模型摘要信息
+
+5. rugarch 和 mgarch 包
+
+介绍：
+rugarch 包和 mgarch 包是现代 GARCH 模型建模的常用工具，支持多种扩展模型。
+能够进行残差序列的正态性检验和模型参数优化。
+
+函数分类及功能：
+	1.	模型估计与拟合函数
+	•	ugarchfit() - 估计 GARCH 模型参数
+	•	ugarchspec() - 指定模型配置
+	2.	模型诊断与预测函数
+	•	ugarchforecast() - 生成未来时间点的预测
+	•	ugarchroll() - 进行滚动窗口预测
+	3.	模型验证与检验函数
+	•	ugarchfilter() - 计算过滤后的残差
+	•	ugarchboot() - 进行引导分布检验
+
+6. tseries 包
+
+介绍：
+tseries 包是时间序列分析的经典工具包，支持多种 ARCH/GARCH 模型及残差分析。
+支持模型平稳性检验和预测分析，尤其适合金融数据建模。
+
+函数分类及功能：
+	1.	模型估计与诊断函数
+	•	garch() - 估计 ARCH 或 GARCH 模型参数
+	•	print() - 打印模型摘要
+	•	summary() - 显示模型详细信息
+	2.	预测与检验函数
+	•	predict() - 生成未来值预测
+	•	residuals() - 提取模型残差
+	•	logLik() - 计算对数似然值
